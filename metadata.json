@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Numérique — ISET Nabeul & Classroom Studio",
+  "description": "Portfolio numérique étudiant ISET Nabeul (Digital Skills, Fondamental IT, Systèmes Électriques, TP) relié à Google Classroom avec génération de résumés, podcasts audio, vidéos de cours et export ZIP pour GitHub Pages, VS Code et Google Cloud.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
