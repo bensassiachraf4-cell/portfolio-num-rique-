@@ -1,29 +1,43 @@
 <!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Numérique — ISET Nabeul & Classroom Studio</title>
-    <meta
-      name="description"
-      content="Portfolio numérique étudiant ISET Nabeul (Digital Skills, Fondamental IT, Systèmes Électriques, TP) relié à Google Classroom avec génération de résumés, podcasts audio, vidéos de cours et export ZIP pour GitHub Pages, VS Code et Google Cloud."
-    />
-    <meta property="og:title" content="Portfolio Numérique — ISET Nabeul & Classroom Studio" />
-    <meta
-      property="og:description"
-      content="Portfolio numérique étudiant ISET Nabeul relié à Google Classroom : cours, TP, résumés IA, podcasts audio, vidéos et export ZIP GitHub Pages."
-    />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-[#0B1120] dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="StudyHub — campus numérique pour réviser les matières de l'ISET Nabeul.">
+<meta name="theme-color" content="#6c4df6"><title>StudyHub — ISET Nabeul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">✦</span> study<span>hub</span></a>
+<nav id="nav"><a href="#mindmap">Mind map</a><a href="#subjects">Matières</a><a href="#resources">Ressources</a><a href="#classroom">Classroom</a></nav><button class="menu" id="menu" aria-label="Menu">☰</button></header>
+<main>
+<section class="hero"><div class="hero-copy"><div class="eyebrow"><i></i> TON CAMPUS NUMÉRIQUE · ISET NABEUL</div>
+<h1>Apprendre mieux.<br><em>Réviser autrement.</em></h1><p>Un espace moderne et coloré pour retrouver tes matières, organiser tes révisions et accéder rapidement à tes cours.</p>
+<div class="actions"><a class="btn primary" href="#subjects">Explorer les matières <b>↗</b></a><a class="btn light" href="#classroom">Mes classes</a></div>
+<div class="stats"><div><b>06</b><span>matières</span></div><div><b>10</b><span>espaces Classroom</span></div><div><b>24/7</b><span>à ton rythme</span></div></div></div>
+<div class="hero-visual"><div class="halo"></div><div class="orbit-card card-a">✧ <span>Comprendre</span></div><div class="orbit-card card-b">◉ <span>Pratiquer</span></div><div class="orbit-card card-c">↗ <span>Réussir</span></div><div class="core"><span>✦</span><b>STUDY<br>HUB</b><small>LEARN · CREATE · GROW</small></div><i class="star star-a">✳</i><i class="star star-b">✺</i></div></section>
+<section class="section" id="mindmap"><div class="section-head"><div><div class="eyebrow">VUE D'ENSEMBLE</div><h2>Ton univers <em>d'apprentissage</em></h2></div><p>Choisis une matière pour afficher sa description.</p></div>
+<div class="map"><div class="map-center"><span>✦</span><b>MON<br>PARCOURS</b><small>ISET NABEUL</small></div>
+<button class="map-node n1" data-key="digital"><i>✧</i><b>Digital Skills</b><small>Outils & collaboration</small></button>
+<button class="map-node n2" data-key="it"><i>▦</i><b>Fundamental IT</b><small>Matériel & systèmes</small></button>
+<button class="map-node n3" data-key="c"><i>{ }</i><b>Algorithmique & C</b><small>Logique & programmation</small></button>
+<button class="map-node n4" data-key="electric"><i>ϟ</i><b>Système électrique</b><small>Circuits & mesures</small></button>
+<button class="map-node n5" data-key="system"><i>⌘</i><b>Systèmes</b><small>Windows, Linux & fichiers</small></button>
+<button class="map-node n6" data-key="web"><i>◈</i><b>HTML & CSS</b><small>Développement web</small></button></div>
+<div class="detail" id="detail"><span>✦</span><div><b>Explore une matière</b><p>Clique sur une branche du mind map.</p></div></div></section>
+<section class="section subjects" id="subjects"><div class="section-head"><div><div class="eyebrow">APPRENDRE PAR THÈME</div><h2>Des matières, <em>des possibilités.</em></h2></div><label class="search">⌕ <input id="search" placeholder="Rechercher une matière…" aria-label="Rechercher"></label></div>
+<div class="subject-grid" id="subjectGrid">
+<article class="subject purple" data-name="digital skills compétences numériques"><span class="subject-icon">✧</span><small>COMPÉTENCES NUMÉRIQUES</small><h3>Digital Skills</h3><p>Bureautique, recherche d'information, sécurité et collaboration numérique.</p><a href="#resources">Voir les ressources ↗</a></article>
+<article class="subject blue" data-name="fundamental it informatique"><span class="subject-icon">▦</span><small>INFORMATIQUE</small><h3>Fundamental IT</h3><p>Processeur, mémoire, stockage, réseaux et composants d'un ordinateur.</p><a href="#resources">Voir les ressources ↗</a></article>
+<article class="subject orange" data-name="algorithmique c programmation"><span class="subject-icon">{ }</span><small>PROGRAMMATION</small><h3>Algorithmique & C</h3><p>Variables, conditions, boucles, tableaux et exercices corrigés.</p><a href="#resources">Voir les ressources ↗</a></article>
+<article class="subject yellow" data-name="système électrique electricité"><span class="subject-icon">ϟ</span><small>ÉLECTRICITÉ</small><h3>Système électrique</h3><p>Grandeurs électriques, lois, circuits et travaux pratiques.</p><a href="#resources">Voir les ressources ↗</a></article>
+<article class="subject green" data-name="systèmes exploitation unix windows"><span class="subject-icon">⌘</span><small>SYSTÈMES</small><h3>Systèmes d'exploitation</h3><p>Fichiers, dossiers, commandes et environnements Windows/Linux.</p><a href="#resources">Voir les ressources ↗</a></article>
+<article class="subject pink" data-name="html css web"><span class="subject-icon">◈</span><small>DÉVELOPPEMENT WEB</small><h3>HTML & CSS</h3><p>Structure des pages, styles, mise en page et mini-projets.</p><a href="#resources">Voir les ressources ↗</a></article></div></section>
+<section class="section resources" id="resources"><div class="section-head"><div><div class="eyebrow">TA BOÎTE À OUTILS</div><h2>Réviser à ta <em>façon.</em></h2></div><p>Tous les formats pour apprendre et progresser.</p></div>
+<div class="resource-grid"><a class="resource"><span class="res-icon purple-bg">▤</span><div><b>Fiches & résumés PDF</b><small>Les notions essentielles, clairement structurées</small></div><strong>↗</strong></a>
+<a class="resource"><span class="res-icon orange-bg">♫</span><div><b>Podcasts de révision</b><small>Écouter les cours et réviser partout</small></div><strong>↗</strong></a>
+<a class="resource"><span class="res-icon blue-bg">▶</span><div><b>Vidéos pédagogiques</b><small>Visualiser les concepts et démonstrations</small></div><strong>↗</strong></a>
+<a class="resource"><span class="res-icon green-bg">✓</span><div><b>TP & exercices corrigés</b><small>Pratiquer avec des exemples progressifs</small></div><strong>↗</strong></a></div>
+<p class="resource-note">Les ressources PDF, audio et vidéo seront ajoutées au fur et à mesure dans les espaces de cours.</p></section>
+<section class="classroom" id="classroom"><div class="classroom-copy"><div class="eyebrow pale">TOUT EST CONNECTÉ</div><h2>Tes classes Google<br><em>à portée de clic.</em></h2><p>Accède directement aux dix espaces Google Classroom déjà partagés.</p><a class="btn white" href="https://classroom.google.com/" target="_blank" rel="noopener">Ouvrir Google Classroom ↗</a></div>
+<div class="classroom-panel"><div class="panel-title"><span class="google">G</span><b>Mes espaces de cours</b><small>10 LIENS RAPIDES</small></div><div class="class-links" id="classLinks"></div><p class="hint">Connecte-toi avec le compte Google associé à tes cours.</p></div></section>
+</main><footer><a class="brand" href="#"><span class="brand-icon">✦</span> study<span>hub</span></a><p>Conçu pour apprendre, créer et réussir à l'ISET Nabeul.</p><small>© 2026 StudyHub · Portfolio numérique</small></footer>
+<script src="script.js"></script></body></html>
