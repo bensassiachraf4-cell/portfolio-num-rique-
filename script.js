@@ -1,30 +1,17 @@
 const classes=[
-["Espace de cours 1","https://classroom.google.com/c/ODkyMTAxMDQyNTk1"],
-["Espace de cours 2","https://classroom.google.com/c/ODg4NDM0NzEwOTgw"],
-["Espace de cours 3","https://classroom.google.com/c/ODg2NzYwNzAyNDE0"],
-["Espace de cours 4","https://classroom.google.com/c/ODg1MzU5NzEyMDE4"],
-["Espace de cours 5","https://classroom.google.com/c/ODg1MTk1NjU3NTgw"],
-["Espace de cours 6","https://classroom.google.com/c/ODc4NTc1NTk0NjIx"],
-["Espace de cours 7","https://classroom.google.com/c/ODQ0Nzg4NTMxMjU0"],
-["Espace de cours 8","https://classroom.google.com/c/ODQ0OTE0NjMzMzYy"],
-["Espace de cours 9","https://classroom.google.com/c/NzEzMjQ2OTQyNzkx"],
-["Espace de cours 10","https://classroom.google.com/c/ODg3MDE4MDMzNDcx"]
-];
-document.getElementById("classLinks").innerHTML=classes.map(([name,url])=>'<a class="class-link" href="'+url+'" target="_blank" rel="noopener">'+name+' <span>↗</span></a>').join("");
-const subjects={
-digital:["Digital Skills","Outils numériques, bureautique, recherche d'information, cybersécurité et travail collaboratif."],
-it:["Fundamental IT","Découvrir les composants d'un ordinateur, le processeur, la mémoire, le stockage et les réseaux."],
-c:["Algorithmique & C","Construire un raisonnement logique, écrire des algorithmes et programmer en langage C."],
-electric:["Système électrique","Comprendre les grandeurs électriques, les composants, les circuits et les mesures en TP."],
-system:["Systèmes d'exploitation","Manipuler les fichiers, les dossiers, les commandes et les environnements Windows/Linux."],
-web:["HTML & CSS","Créer des pages web structurées, styliser les contenus et réaliser des mini-projets."]
-};
-document.querySelectorAll(".map-node").forEach(node=>node.addEventListener("click",()=>{
- document.querySelectorAll(".map-node").forEach(n=>n.classList.remove("active"));node.classList.add("active");
- const [title,desc]=subjects[node.dataset.key];document.getElementById("detail").innerHTML='<span>✦</span><div><b>'+title+'</b><p>'+desc+'</p></div>';
-}));
-document.getElementById("search").addEventListener("input",e=>{
- const q=e.target.value.toLocaleLowerCase("fr").trim();
- document.querySelectorAll(".subject").forEach(card=>card.hidden=!(card.dataset.name+" "+card.innerText).toLocaleLowerCase("fr").includes(q));
-});
+["Espace de cours 1","https://classroom.google.com/c/ODkyMTAxMDQyNTk1"],["Espace de cours 2","https://classroom.google.com/c/ODg4NDM0NzEwOTgw"],["Espace de cours 3","https://classroom.google.com/c/ODg2NzYwNzAyNDE0"],["Espace de cours 4","https://classroom.google.com/c/ODg1MzU5NzEyMDE4"],["Espace de cours 5","https://classroom.google.com/c/ODg1MTk1NjU3NTgw"],["Espace de cours 6","https://classroom.google.com/c/ODc4NTc1NTk0NjIx"],["Espace de cours 7","https://classroom.google.com/c/ODQ0Nzg4NTMxMjU0"],["Espace de cours 8","https://classroom.google.com/c/ODQ0OTE0NjMzMzYy"],["Espace de cours 9","https://classroom.google.com/c/NzEzMjQ2OTQyNzkx"],["Espace de cours 10","https://classroom.google.com/c/ODg3MDE4MDMzNDcx"]];
+document.getElementById("classLinks").innerHTML=classes.map(([n,u])=>'<a class="class-link" href="'+u+'" target="_blank" rel="noopener">'+n+' <span>↗</span></a>').join("");
+const list=document.getElementById("courseList"),content=document.getElementById("courseContent");
+const icons={purple:"#7454ef",blue:"#2999e9",orange:"#f28a50",yellow:"#e5ae28",green:"#28b58c",pink:"#e967a0"};
+function renderList(filter=""){list.innerHTML="";STUDYHUB_COURSES.filter(c=>(c.name+" "+c.title+" "+c.subtitle+" "+c.chapters.map(x=>x.join(" ")).join(" ")).toLocaleLowerCase("fr").includes(filter)).forEach(c=>{const b=document.createElement("button");b.className="course-option"+(c.id===activeId?" active":"");b.dataset.id=c.id;b.innerHTML='<span class="course-dot" style="color:'+icons[c.color]+'">'+c.icon+'</span><span><b>'+c.name+'</b><small>'+c.subtitle+'</small></span>';b.addEventListener("click",()=>selectCourse(c.id));list.appendChild(b);});}
+let activeId=null;
+function selectCourse(id){activeId=id;const c=STUDYHUB_COURSES.find(x=>x.id===id);renderList(document.getElementById("search").value.toLocaleLowerCase("fr").trim());content.innerHTML='<div class="course-kicker">'+c.subtitle.toUpperCase()+' · ISET NABEUL</div><h3 class="course-title">'+c.title+'</h3><p class="course-intro">'+c.intro+'</p><div class="course-kicker" style="color:#8a849e;letter-spacing:.5px;margin-bottom:12px">'+c.level+' · '+c.source+'</div><div class="course-tabs"><button class="tab-btn active" data-tab="summary">Résumé</button><button class="tab-btn" data-tab="chapters">Chapitres</button><button class="tab-btn" data-tab="map">Mind map</button><button class="tab-btn" data-tab="podcast">Podcast</button><button class="tab-btn" data-tab="video">Vidéo</button><button class="tab-btn" data-tab="quiz">Quiz</button></div><div class="tab-panel" id="tabPanel"></div>';content.querySelectorAll(".tab-btn").forEach(b=>b.addEventListener("click",()=>{content.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderTab(c,b.dataset.tab);}));renderTab(c,"summary");}
+function renderTab(c,tab){const p=document.getElementById("tabPanel");if(tab==="summary"){p.innerHTML='<h4>Résumé du cours</h4><div class="summary-box">'+c.summary.map(x=>'<p>'+x+'</p>').join("")+'</div><div class="key-grid">'+c.keys.map(([a,b])=>'<div class="key-item"><b>'+a+'</b>'+b+'</div>').join("")+'</div>';}
+if(tab==="chapters"){p.innerHTML='<h4>Plan et explication des chapitres</h4><div class="chapter-list">'+c.chapters.map(([a,b])=>'<div class="chapter"><b>'+a+'</b><p>'+b+'</p></div>').join("")+'</div>';}
+if(tab==="map"){p.innerHTML='<h4>Carte mentale du cours</h4><div class="mindmap"><div class="map-hub">'+c.name+'<small>NOTIONS CLÉS</small></div>'+c.map.map(([a,b],i)=>'<div class="map-leaf leaf-'+(i+1)+'"><b>'+a+'</b><small>'+b+'</small></div>').join("")+'</div><p style="font-size:10px;color:#89839c;margin-top:10px">Lis les branches autour du thème central : chaque branche représente une idée à mémoriser.</p>';}
+if(tab==="podcast"){p.innerHTML=c.podcast?'<h4>Écouter le podcast du cours</h4><div class="podcast-inline"><span>♫</span><div><b>'+c.podcastTitle+'</b><p>Épisode audio en français · écoute et révise.</p><audio controls preload="metadata"><source src="'+c.podcast+'" type="audio/mpeg"></audio></div></div>':'<h4>Podcast du cours</h4><div class="summary-box"><p>Le podcast de ce chapitre est en préparation. La fiche de cours est déjà disponible. Les prochains épisodes seront enregistrés à partir des supports PDF de la matière.</p></div>';}
+if(tab==="video"){p.innerHTML='<h4>Vidéo pédagogique</h4><div class="video-inline"><div class="video-placeholder" style="height:115px;border-radius:12px"><span>▶</span></div><div><b>'+c.videoTitle+'</b><p>'+c.videoDesc+'</p><a class="text-link" href="'+c.videoUrl+'" target="_blank" rel="noopener">Ouvrir la vidéo / ressource ↗</a></div></div>';}
+if(tab==="quiz"){p.innerHTML='<h4>Teste ta compréhension</h4>'+c.quiz.map((q,i)=>'<div class="quiz" data-correct="'+q[2]+'"><p>'+ (i+1)+'. '+q[0]+'</p>'+q[1].map((a,k)=>'<button data-option="'+k+'">'+a+'</button>').join("")+'<div class="answer"></div></div>').join("");p.querySelectorAll(".quiz button").forEach(b=>b.addEventListener("click",()=>{const q=b.closest(".quiz");const good=Number(b.dataset.option)===Number(q.dataset.correct);q.querySelector(".answer").textContent=good?"✓ Bonne réponse !":"✗ Réessaie : relis le résumé.";q.querySelector(".answer").style.color=good?"#239b78":"#e06a73";}));}}
+document.getElementById("search").addEventListener("input",e=>{const q=e.target.value.toLocaleLowerCase("fr").trim();renderList(q);});
 document.getElementById("menu").addEventListener("click",()=>document.getElementById("nav").classList.toggle("open"));
+renderList();
