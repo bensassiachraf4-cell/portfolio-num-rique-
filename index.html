@@ -22,10 +22,22 @@
 <div class="google-connect-box" id="googleConnectBox">
   <div class="google-connect-copy"><strong>Synchroniser mes vrais cours</strong><p>Connecte ton compte Google pour afficher tes classes, supports et devoirs directement depuis Classroom.</p></div>
   <button class="google-connect-btn" id="googleConnectBtn" type="button">🔗 Connecter Google Classroom</button>
+  <div class="pdf-import-tools">
+    <label for="googleApiKey">Clé API Google (clé restreinte)</label>
+    <input id="googleApiKey" type="password" autocomplete="off" placeholder="Colle ici ta clé API Google">
+    <button class="google-connect-btn" id="pickPdfBtn" type="button" disabled>📄 Importer un PDF depuis Google Drive</button>
+    <p class="pdf-import-hint">Reconnecte Classroom, puis colle ta clé API et sélectionne un PDF. La clé reste dans cette session du navigateur.</p>
+    <p id="pdfImportStatus" class="google-connect-status" role="status" aria-live="polite"></p>
+    <div id="pdfExtractedPanel" hidden>
+      <strong id="pdfExtractedName"></strong>
+      <textarea id="pdfExtractedText" rows="9" placeholder="Le texte extrait du PDF apparaîtra ici." readonly></textarea>
+      <small>Texte extrait localement du document sélectionné. Il n'est pas envoyé à un service IA.</small>
+    </div>
+  </div>
   <button class="google-disconnect-btn" id="googleDisconnectBtn" type="button" hidden>Déconnecter</button>
   <p class="google-connect-status" id="googleConnectStatus" role="status" aria-live="polite">Connexion sécurisée Google · accès en lecture seule</p>
   <div id="googleClassroomResults" class="google-classroom-results"></div>
 </div><div class="class-links" id="classLinks"></div><p class="hint">Les liens ouvrent tes espaces Classroom dans un nouvel onglet.</p></div></section>
 <section class="upload-note"><b>Tu veux les résumés exacts de tous tes chapitres ?</b><p>Envoie les PDF de tes cours d'Algorithmique & C, Fundamental IT et Système électrique. Je pourrai compléter les fiches, cartes mentales, podcasts et vidéos à partir des documents de tes enseignants.</p></section></main>
 <footer><a class="brand" href="#"><span class="brand-icon">✦</span> study<span>hub</span></a><p>Réviser simplement · ISET Nabeul · 1ère année Informatique Technologique</p><small>© 2026 StudyHub</small></footer>
-<script src="https://accounts.google.com/gsi/client" async defer></script><script src="courses.js"></script><script src="script.js"></script><script src="google-classroom.js"></script></body></html>
+<script src="https://accounts.google.com/gsi/client" async defer></script><script src="https://apis.google.com/js/api.js" async defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="courses.js"></script><script src="script.js"></script><script src="google-classroom.js"></script></body></html>
