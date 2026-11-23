@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="StudyHub — portfolio numérique et espace de révision pour les étudiants de l'ISET Nabeul.">
+<title>StudyHub — Portfolio numérique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">✦</span> study<span>hub</span></a>
+<nav><a href="#mindmap">Mind map</a><a href="#matieres">Matières</a><a href="#ressources">Ressources</a><a href="#classroom">Classroom</a></nav>
+<button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu">☰</button></header>
+<main>
+<section class="hero">
+<div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> TON CAMPUS NUMÉRIQUE</div>
+<h1>Apprendre mieux.<br><span>Réviser autrement.</span></h1>
+<p>Un espace coloré pour organiser tes cours, explorer les idées et progresser à ton rythme à l'ISET Nabeul.</p>
+<div class="hero-actions"><a class="btn primary" href="#mindmap">Explorer le mind map <span>↗</span></a><a class="btn ghost" href="#classroom">Accéder à Classroom</a></div>
+<div class="hero-stats"><div><b>06</b><small>matières clés</small></div><div><b>∞</b><small>idées à explorer</small></div><div><b>24/7</b><small>révision libre</small></div></div>
+</div>
+<div class="hero-art" aria-label="Illustration abstraite"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="float-card fc-a">✧ <span>Comprendre</span></div><div class="float-card fc-b">◉ <span>Pratiquer</span></div><div class="float-card fc-c">↗ <span>Réussir</span></div><div class="hero-core"><div class="core-icon">✦</div><strong>STUDY<br>HUB</strong><small>LEARN • CREATE • GROW</small></div><span class="spark s1">✳</span><span class="spark s2">✦</span><span class="spark s3">✺</span></div>
+</section>
+<section class="section mind-section" id="mindmap"><div class="section-heading"><div><div class="eyebrow">VUE D'ENSEMBLE</div><h2>Ton univers <span>d'apprentissage</span></h2></div><p>Choisis une branche pour découvrir les notions et les ressources.</p></div>
+<div class="mindmap-wrap"><div class="mindmap">
+<svg class="connectors" viewBox="0 0 900 540" preserveAspectRatio="none"><path d="M450 270 C300 250 240 100 130 95"/><path d="M450 270 C600 250 670 100 770 95"/><path d="M450 270 C290 270 220 270 115 270"/><path d="M450 270 C610 270 690 270 785 270"/><path d="M450 270 C300 300 230 430 130 440"/><path d="M450 270 C600 310 680 430 770 440"/></svg>
+<div class="mind-center"><span>✦</span><b>MON<br>PARCOURS</b><small>ISET NABEUL</small></div>
+<button class="node node-1" data-subject="digital"> <i>✧</i><b>Digital Skills</b><small>Outils & collaboration</small></button>
+<button class="node node-2" data-subject="it"><i>▦</i><b>Fundamental IT</b><small>Hardware & systèmes</small></button>
+<button class="node node-3" data-subject="c"><i>{ }</i><b>Algorithmique & C</b><small>Logique & programmation</small></button>
+<button class="node node-4" data-subject="electric"><i>ϟ</i><b>Système électrique</b><small>Circuits & mesures</small></button>
+<button class="node node-5" data-subject="system"><i>⌘</i><b>Systèmes</b><small>Windows, Linux & fichiers</small></button>
+<button class="node node-6" data-subject="web"><i>◈</i><b>Web</b><small>HTML & CSS</small></button>
+</div></div>
+<div class="subject-detail" id="subjectDetail"><div class="detail-icon">✦</div><div><b>Explore une matière</b><p>Clique sur une branche du mind map pour afficher son contenu.</p></div></div>
+</section>
+<section class="section" id="matieres"><div class="section-heading"><div><div class="eyebrow">APPRENDRE PAR THÈME</div><h2>Des matières, <span>des possibilités.</span></h2></div><div class="search-wrap"><span>⌕</span><input id="searchInput" placeholder="Rechercher une matière..." aria-label="Rechercher une matière"></div></div>
+<div class="subject-grid" id="subjectGrid">
+<article class="subject-card c-purple" data-name="digital skills"><div class="card-icon">✧</div><span class="tag">COMPÉTENCES NUMÉRIQUES</span><h3>Digital Skills</h3><p>Bureautique, recherche, sécurité et collaboration numérique.</p><a href="#ressources">Voir les ressources ↗</a></article>
+<article class="subject-card c-blue" data-name="fundamental it informatique"><div class="card-icon">▦</div><span class="tag">INFORMATIQUE</span><h3>Fundamental IT</h3><p>Processeur, mémoire, stockage, réseaux et composants.</p><a href="#ressources">Voir les ressources ↗</a></article>
+<article class="subject-card c-orange" data-name="algorithmique c programmation"><div class="card-icon">{ }</div><span class="tag">PROGRAMMATION</span><h3>Algorithmique & C</h3><p>Variables, conditions, boucles, tableaux et exercices corrigés.</p><a href="#ressources">Voir les ressources ↗</a></article>
+<article class="subject-card c-yellow" data-name="système électrique electricite"><div class="card-icon">ϟ</div><span class="tag">ÉLECTRICITÉ</span><h3>Système électrique</h3><p>Grandeurs électriques, lois, circuits et travaux pratiques.</p><a href="#ressources">Voir les ressources ↗</a></article>
+<article class="subject-card c-green" data-name="systèmes exploitation unix windows"><div class="card-icon">⌘</div><span class="tag">SYSTÈMES</span><h3>Systèmes d'exploitation</h3><p>Arborescence, fichiers, commandes et environnement système.</p><a href="#ressources">Voir les ressources ↗</a></article>
+<article class="subject-card c-pink" data-name="web html css"><div class="card-icon">◈</div><span class="tag">DÉVELOPPEMENT WEB</span><h3>HTML & CSS</h3><p>Structure des pages, styles, mise en page et mini-projets.</p><a href="#ressources">Voir les ressources ↗</a></article>
+</div></section>
+<section class="section resource-section" id="ressources"><div class="section-heading"><div><div class="eyebrow">TA BOÎTE À OUTILS</div><h2>Réviser à ta <span>façon.</span></h2></div><p>Les supports essentiels réunis au même endroit.</p></div>
+<div class="resource-grid"><a class="resource-card" href="#classroom"><span class="res-icon purple">▤</span><div><b>Fiches & résumés PDF</b><small>Les notions essentielles, clairement structurées</small></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="#classroom"><span class="res-icon orange">♫</span><div><b>Podcasts de révision</b><small>Écouter les cours avec une voix naturelle</small></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="#classroom"><span class="res-icon blue">▶</span><div><b>Vidéos pédagogiques</b><small>Visualiser les concepts et les démonstrations</small></div><span class="arrow">↗</span></a>
+<a class="resource-card" href="#classroom"><span class="res-icon green">✓</span><div><b>TP & exercices corrigés</b><small>S'entraîner avec des exemples progressifs</small></div><span class="arrow">↗</span></a></div></section>
+<section class="classroom-section" id="classroom"><div class="classroom-copy"><div class="eyebrow light">TOUT EST CONNECTÉ</div><h2>Ton Google<br>Classroom, <span>au même endroit.</span></h2><p>Retrouve rapidement tes espaces de cours. Les liens ouvrent directement tes classes Google Classroom.</p><a class="btn white" href="https://classroom.google.com/" target="_blank" rel="noopener">Ouvrir Google Classroom ↗</a></div><div class="classroom-panel"><div class="panel-top"><span class="google-dot">G</span><b>Mes espaces de cours</b><span class="live">LIENS RAPIDES</span></div><div id="classLinks" class="class-links"></div><p class="hint">Personnalise les liens dans <code>script.js</code> avec les URL de tes classes.</p></div></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">✦</span> study<span>hub</span></a><p>Conçu pour apprendre, créer et réussir à l'ISET Nabeul.</p><small>© 2026 StudyHub · Portfolio numérique</small></footer>
+<script src="script.js"></script></body></html>
