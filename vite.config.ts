@@ -5,7 +5,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
-  return {
+  return {\n    base: '/portfolio-num-rique-/',
     plugins: [
       react(),
       tailwindcss(),
