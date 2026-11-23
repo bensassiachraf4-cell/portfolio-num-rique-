@@ -20,3 +20,14 @@
 .google-resource-links{display:flex;flex-direction:column;gap:6px;min-width:max-content}
 .google-resource-links a{font-size:11px;color:inherit;text-decoration:underline}
 @media(max-width:600px){.google-resource{display:block}.google-resource-links{margin-top:8px}}
+
+/* Drive PDF picker and local PDF text extraction */
+.pdf-import-tools{display:grid;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
+.pdf-import-tools label{font-size:11px;font-weight:700}
+.pdf-import-tools input{width:100%;padding:11px;border:1px solid #e5defa;border-radius:9px;font:inherit;font-size:12px;color:#292344}
+.pdf-import-hint{font-size:10px;line-height:1.5;opacity:.78;margin:0}
+#pdfExtractedPanel{display:grid;gap:8px;padding:12px;background:rgba(255,255,255,.12);border-radius:10px}
+#pdfExtractedPanel[hidden]{display:none}
+#pdfExtractedPanel strong{font-size:12px}
+#pdfExtractedPanel textarea{width:100%;resize:vertical;border:1px solid #e5defa;border-radius:8px;padding:10px;font:11px/1.5 monospace;color:#292344;background:#fff}
+#pdfExtractedPanel small{font-size:10px;opacity:.8}
